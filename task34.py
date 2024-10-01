@@ -3,13 +3,12 @@ calc = {}
 s = []
 with open('dataset_3363_3.txt') as f:
     for line in f:
-        s+= f.readline().strip().lower().split()
+        s+= line.strip().lower().split()
 
 for i in set(s):
     if s.count(i) in calc.keys():
         calc[s.count(i)].append(i)
     else:
         calc[s.count(i)]=[]
-        calc[s.count(i)].append(i)
-print(calc)    
+        calc[s.count(i)].append(i)    
 print(min(calc[max(calc.keys())]), max(calc.keys()))
